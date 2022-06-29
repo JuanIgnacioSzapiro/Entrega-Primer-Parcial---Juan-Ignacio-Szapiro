@@ -165,6 +165,7 @@ public class Administrador extends Usuario implements Serializable {
         } catch (Exception exception) {
             EntradaSalida.mostrarString("agregarSucursal: "+exception);
         }
+        EntradaSalida.mostrarString("SE CARGO CORRECTAMENTE");
     }
     public int buscarMaxIDSucursal(Archivo archivo){
         int max=0, contador=0;

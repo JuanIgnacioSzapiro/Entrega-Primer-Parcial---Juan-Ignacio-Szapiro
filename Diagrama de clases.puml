@@ -39,10 +39,8 @@ class Control.Validacion {
 class Modelos.Usuario {
 }
 class Modelos.Cliente {
-+ <<Create>> Cliente(int,String,String)
 }
 class Control.Constantes {
-+ {static} String total
 }
 class Modelos.Empleado {
 }
@@ -65,4 +63,10 @@ java.io.Serializable <|.. Modelos.Empleado
 Modelos.Usuario <|-- Modelos.Empleado
 java.io.Serializable <|.. Modelos.Administrador
 Modelos.Usuario <|-- Modelos.Administrador
+Modelos.Sucursal "1" *-- Modelos.Zona
+Modelos.Zona "1" *-- Modelos.Caja
+Modelos.Empleado "1" *-- Modelos.Zona
+Modelos.Empleado "1" *-- Modelos.Caja
+Modelos.Cliente "1" *-- Modelos.Zona
+Modelos.Cliente "1" *-- Modelos.Caja
 @enduml
