@@ -1,0 +1,68 @@
+@startuml
+/'
+esconde el círculo
+'/
+skinparam classAttributeIconSize 0
+/'
+le saca la visibilidad a las propiedades y métodos
+'/
+skinparam monochrome true
+/'
+lo vuelve blanco y negro
+'/
+hide members
+/'
+solo deja el nombre de las clases
+'/
+class Control.Inicio {
+}
+class Control.Sesion {
+}
+class Modelos.Sucursal {
+}
+class Visual.Menu {
+}
+class Modelos.Lugar {
+}
+class Visual.EntradaSalida {
+}
+class Control.Archivo {
+}
+class Modelos.Caja {
+}
+class Control.BlueBox {
+}
+class Modelos.Zona {
+}
+class Control.Validacion {
+}
+class Modelos.Usuario {
+}
+class Modelos.Cliente {
++ <<Create>> Cliente(int,String,String)
+}
+class Control.Constantes {
++ {static} String total
+}
+class Modelos.Empleado {
+}
+class Modelos.Administrador {
+}
+
+
+java.io.Serializable <|.. Modelos.Sucursal
+Modelos.Lugar <|-- Modelos.Sucursal
+java.io.Serializable <|.. Modelos.Lugar
+Control.Serializable <|.. Control.Archivo
+java.io.Serializable <|.. Modelos.Caja
+Modelos.Lugar <|-- Modelos.Caja
+java.io.Serializable <|.. Modelos.Zona
+Modelos.Lugar <|-- Modelos.Zona
+java.io.Serializable <|.. Modelos.Usuario
+java.io.Serializable <|.. Modelos.Cliente
+Modelos.Usuario <|-- Modelos.Cliente
+java.io.Serializable <|.. Modelos.Empleado
+Modelos.Usuario <|-- Modelos.Empleado
+java.io.Serializable <|.. Modelos.Administrador
+Modelos.Usuario <|-- Modelos.Administrador
+@enduml

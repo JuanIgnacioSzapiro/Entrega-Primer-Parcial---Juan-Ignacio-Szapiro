@@ -1,0 +1,74 @@
+@startuml
+hide circle
+/'
+esconde el círculo
+'/
+skinparam classAttributeIconSize 0
+/'
+le saca la visibilidad a las propiedades y métodos
+'/
+skinparam monochrome true
+/'
+lo vuelve blanco y negro
+'/
+hide members
+/'
+solo deja el nombre de las clases
+'/
+left to right direction
+/'
+genera el uml en columnas (de izquierda a derecha)
+'/
+skinparam classAttributeIconSize 0
+actor "Cliente" as cliente
+actor "Empleados" as empleado
+actor "Administrador" as administrador
+actor "PreUsuario" as PreUsuario
+
+rectangle MenuInicioSecion{
+usecase "Registrar usuario nuevo" as registrar
+usecase "Abrir sesión" as abrirSesion
+usecase "Cerrar sesión" as cerrarSesion
+}
+
+rectangle MenuCliente{
+usecase "Listar todos los datos accesibles" as listarTodoC
+}
+rectangle MenuEmpleado{
+usecase "Listar todos los datos accesibles" as listarTodoE
+}
+rectangle MenuAdministrador{
+usecase "Acceder a pendientes" as pendientes
+usecase "Listar autorizados" as autorizados
+usecase "Listar rechazados" as rechazados
+}
+
+rectangle MenuPendientes{
+usecase "Aprobar" as aprobar
+usecase "Rechazar" as rechazar
+}
+
+PreUsuario --> registrar
+PreUsuario -->  abrirSesion
+PreUsuario -->  cerrarSesion
+
+administrador --> registrar
+administrador -->  abrirSesion
+administrador -->  cerrarSesion
+administrador --> pendientes
+administrador --> autorizados
+administrador --> rechazados
+administrador --> aprobar
+administrador --> rechazar
+
+empleado --> registrar
+empleado --> abrirSesion
+empleado --> cerrarSesion
+empleado --> listarTodoE
+
+cliente --> registrar
+cliente -->  abrirSesion
+cliente -->  cerrarSesion
+cliente --> listarTodoC
+
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+hide circle
+/'
+esconde el círculo
+'/
+skinparam classAttributeIconSize 0
+/'
+le saca la visibilidad a las propiedades y métodos
+'/
+skinparam monochrome true
+/'
+lo vuelve blanco y negro
+'/
+hide members
+/'
+solo deja el nombre de las clases
+'/
+left to right direction
+/'
+genera el uml en columnas (de izquierda a derecha)
+'/
+skinparam classAttributeIconSize 0
+actor "Cliente" as cliente
+
+rectangle MenuInicioSecion{
+usecase "Registrar usuario nuevo" as registrar
+usecase "Abrir sesión" as abrirSesion
+usecase "Cerrar sesión" as cerrarSesion
+}
+
+rectangle MenuCliente{
+usecase "Listar todos los datos accesibles" as listarTodoC
+}
+cliente --> registrar
+cliente -->  abrirSesion
+cliente -->  cerrarSesion
+cliente --> listarTodoC
+
+@enduml
