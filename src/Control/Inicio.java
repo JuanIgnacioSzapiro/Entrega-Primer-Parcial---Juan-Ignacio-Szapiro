@@ -171,9 +171,13 @@ public class Inicio {
                                                             break;
                                                         }
                                                         case 3:{
-                                                            archivo.listarSucursal(archivo);
-                                                            archivo.listarZona(archivo);
-                                                            archivo.listarCaja(archivo);
+                                                            try {
+                                                                archivo.listarSucursal(archivo);
+                                                                archivo.listarZona(archivo);
+                                                                archivo.listarCaja(archivo);
+                                                            }catch (Exception exception){
+                                                                EntradaSalida.mostrarString("LISTADOS"+exception.toString());
+                                                            }
                                                         }
                                                     }
                                                 }while (opcion!=0);
